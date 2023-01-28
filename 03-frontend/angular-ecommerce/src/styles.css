@@ -367,6 +367,7 @@ input.au-input.au-input-xl{
 }
 
 .navbar-sidebar .navbar-list li a{
+    text-decoration:none;
     display:block;
     color:#555;
     font-size:16px;
