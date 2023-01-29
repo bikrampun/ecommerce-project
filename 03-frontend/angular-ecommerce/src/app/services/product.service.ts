@@ -11,6 +11,8 @@ import { map } from 'rxjs/operators';
 export class ProductService {
 
   private baseUrl = 'http://localhost:8080/api/products';
+  // By default, Spring Data REST only returns 1st page of 20 items
+  // localhost:8080/api/products?size=100 - this will change page size to 100 items
 
   // inject HttpClient into our service
   constructor(private httpClient: HttpClient) { }
