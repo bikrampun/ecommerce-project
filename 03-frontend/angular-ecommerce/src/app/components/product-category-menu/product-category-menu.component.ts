@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductCategoryMenuComponent {
 
-  productCategories: ProductCategory[];
+  productCategories: ProductCategory[] = [];
 
   constructor(private productService: ProductService) {}
 
@@ -18,7 +18,7 @@ export class ProductCategoryMenuComponent {
   }
   listProductCategories() {
     this.productService.getProductCategories().subscribe(
-      data => {
+      (      data: ProductCategory[]) => {
         console.log('Product Categories=' + JSON.stringify(data));
         this.productCategories = data;
       }
