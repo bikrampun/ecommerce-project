@@ -553,6 +553,9 @@ input.au-input.au-input-xl{
     padding-top:12px;
     margin-bottom:7px
 }
+.product-box a{
+    text-decoration: none;
+}
 .product-box h2{
     font-size:15px;
     padding-bottom:0;
@@ -722,6 +725,10 @@ table.table.table-bordered th{
 }
 .detail-section{
     margin-top:60px
+}
+
+.detail-img{
+    width: 30%;
 }
 /**/
 
