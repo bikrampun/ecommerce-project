@@ -98,11 +98,11 @@ export class ProductListComponent {
   }
 
   processResult() {
-    return (data: any) => {
+    return data => {
       this.products = data._embedded.products;
       this.thePageNumber = data.page.number + 1;
       this.thePageSize = data.page.size;
-      this.theTotalElements = data.page.totalElements;
+      this.theTotalElements = data.page.theTotalElements;
     }
   }
 }
