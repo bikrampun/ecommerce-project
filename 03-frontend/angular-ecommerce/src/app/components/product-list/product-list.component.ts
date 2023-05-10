@@ -22,6 +22,8 @@ export class ProductListComponent {
   thePageSize: number = 5;
   theTotalElements: number = 0;
 
+  previouskeyword: string | undefined;
+
   constructor(private productService: ProductService,
                 private route: ActivatedRoute) { }
 
@@ -47,12 +49,25 @@ export class ProductListComponent {
 
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword') as string;
 
+    // if we have a different keyword than previous
+    // then set thePageNumber to 1
+
+    if ( this.previouskeyword != theKeyword) {
+      this.thePageNumber = 1;
+    }
+
+    this.previouskeyword = theKeyword;
+
+    console.log(`keyword=${theKeyword}, this.thePageNumber=${this.thePageNumber}`);
+
     // now search for the products using keyword
-    this.productService.searchProducts(theKeyword).subscribe(
-      data => {
-        this.products = data;
-      }
-    )    
+    this.productService
+      .searchProductsPaginate(
+        this.thePageNumber - 1,
+        this.thePageSize,
+        theKeyword
+      )
+      .subscribe(this.processResult());
 
   }
 
