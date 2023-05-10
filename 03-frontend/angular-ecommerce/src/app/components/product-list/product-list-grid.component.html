@@ -37,6 +37,8 @@
                                 <ngb-pagination [(page)]="thePageNumber"
                                                 [pageSize]="thePageSize"
                                                 [collectionSize]="theTotalElements"
+                                                [maxSize]="5"
+                                                [boundaryLinks]="true"
                                                 (pageChange)="listProducts()">
 
                                 </ngb-pagination>
@@ -49,6 +51,7 @@
                                 should be applied here (like HTMLSelectElement), however Angular expressions
                                 doesn't allow casting. The best workaround would be to wrap $event.target with $any() -->
                                 <select (change)="updatePageSize($any($event.target).value)">
+                                    <option>2</option>
                                     <option selected="true">5</option>
                                     <option>10</option>
                                     <option>20</option>
