@@ -126,4 +126,12 @@ export class ProductListComponent {
     this.thePageNumber = 1;
     this.listProducts();
   }
+
+  addToCart(theProduct: Product) {
+    
+    console.log(`Add to Cart: ${theProduct.name}, ${theProduct.unitPrice}`);
+
+    // TODO ... do the real work
+  }
+
 }
