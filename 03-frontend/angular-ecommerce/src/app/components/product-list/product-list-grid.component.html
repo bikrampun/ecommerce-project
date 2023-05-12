@@ -32,7 +32,7 @@
 
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-9" style="padding-left: 30%;">
+                            <div class="col-md-9" style="padding-left: 20%;">
                                 
                                 <ngb-pagination [(page)]="thePageNumber"
                                                 [pageSize]="thePageSize"
@@ -44,13 +44,13 @@
                                 </ngb-pagination>
                             </div>
 
-                            <div class="col-md-3 mt-2" style="text-align: right;">
-                                <span class="mr-2">Page Size</span>
+                            <div class="mt-2" style="text-align: right;">
+                                <span class="mr-3">Page Size</span>
                                 
                                 <!-- The event target can be any HTML Element and a cast to applicable interface
                                 should be applied here (like HTMLSelectElement), however Angular expressions
                                 doesn't allow casting. The best workaround would be to wrap $event.target with $any() -->
-                                <select (change)="updatePageSize($any($event.target).value)">
+                                <select (change)="updatePageSize($any($event.target).value)" style="margin-left: 5px; border-radius: 4px;">
                                     <option>2</option>
                                     <option selected="true">5</option>
                                     <option>10</option>
